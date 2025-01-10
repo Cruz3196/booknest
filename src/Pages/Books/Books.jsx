@@ -8,7 +8,7 @@ const Books = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const API_KEY = "AIzaSyAYXtyHt6qPuYR2VcP89QbgYUjJ5ebenTQ"; //API KEY 
+  const API_KEY = process.env.REACT_GOOGLE_BOOKS_API; //API KEY 
   const genres = ["fiction", "nonfiction", "fantasy", "mystery", "science"]; // GENRE 
 
   const fetchBooksByGenre = async () => {
