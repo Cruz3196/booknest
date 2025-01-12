@@ -17,9 +17,9 @@ const Footer = () => {
                 <Col>
                     <Nav className='flex-column fs-5'>
                         Useful Links 
-                        <Nav.Link href='#'>Home</Nav.Link>
-                        <Nav.Link href='#'>About</Nav.Link>
-                        <Nav.Link href='#'>Books</Nav.Link>
+                        <Nav.Link href='/'>Home</Nav.Link>
+                        <Nav.Link href='/About'>About</Nav.Link>
+                        <Nav.Link href='/Books'>Books</Nav.Link>
                     </Nav>
                 </Col>
                 <Col>

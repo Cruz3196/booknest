@@ -76,13 +76,15 @@ const Books = () => {
     <Container>
       <Row className="my-4">
         <Col>
-          <h1 className="text-center">Listopia</h1>
+          <h1 className="d-flex justify-content-center">
+          Listopia
+          </h1>
         </Col>
       </Row>
-      <Row>
-        <Col md={4}>
-          <Form onSubmit={handleSearch} className="align-items-center">
-            <Form.Group>
+      <Row className="justify-content-center">
+        <Col md={6}>
+          <Form onSubmit={handleSearch} className="d-flex align-items-center">
+            <Form.Group className="w-100 me-2">
               <Form.Control
                 type="text"
                 placeholder="Search for books..."
@@ -90,7 +92,7 @@ const Books = () => {
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
             </Form.Group>
-            <Button variant="primary" type="submit" className="mt-2">
+            <Button variant="primary" type="submit">
               Search
             </Button>
           </Form>
@@ -104,9 +106,13 @@ const Books = () => {
         </Row>
       ) : searchResults.length > 0 ? (
         <Row className="mt-4">
-          <Col>
-            <h2 className="text-center">Search Results</h2>
-          </Col>
+          <Row>
+            <Col>
+              <h2 className="text-center">
+                Search Results
+              </h2>
+            </Col>
+          </Row>
           {searchResults.map((book) => (
             <Col md={3} key={book.id} className="mb-4">
               <Card>
