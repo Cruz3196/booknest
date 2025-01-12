@@ -23,7 +23,7 @@ function Header() {
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#">
-                Profile
+                login
               </a>
             </li>
           </ul>

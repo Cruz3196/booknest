@@ -1,72 +1,15 @@
 import React from 'react';
-import { Container, Row, Col, Button } from 'react-bootstrap';
 
 const Hero = () => {
   return (
-    <Container fluid>
-        <Row 
-        style={{
-          height: '100vh'
-      }}>
-        <Col 
-          style={{
-            border: '1px solid blue',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center'
-        }}>
-          <div className='left-sideHero' 
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-              alignItems: 'flex-start',
-              textAlign: 'left',
-              border: '1px solid red',
-          }}>
-            <div className='Header-Hero' 
-              style={{
-                textTransform: 'uppercase'                
-              }}>
-              <h1>Your year in books 2024</h1>
-            </div>
-            <div className='paragraph-Hero'
-              style={{
-                textTransform: 'capitalize',                
-              }}
-            >
-              <p>
-                Check out your year in reading! <br/> explore fun state like pages read, longest book, and more. 
-              </p>
-            </div>
-            <Button variant="primary">
-              Your Reads 2024
-            </Button>
-          </div>
-        </Col>
+    <div className="hero-section text-center text-white" style={{ background: 'blue', height: '60vh' }}>
+      <div className="hero-content d-flex flex-column justify-content-center align-items-center h-100">
+        <h1>Welcome to Your E-Books Collection</h1>
+        <p>Discover thousands of books across every genre.</p>
+        <button className="btn btn-primary mt-3">Browse Now</button>
+      </div>
+    </div>
+  );
+};
 
-{/* RIGHT SIDE OF THE HERO SECTION  */}
-
-        <Col 
-          style={{
-            border: '1px solid blue',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center'
-        }}>
-            <div 
-              className='right-sideHero' 
-                style={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center'
-            }}>
-                photo
-            </div>
-        </Col>
-      </Row>
-    </Container>
-  )
-}
-
-export default Hero
+export default Hero;
