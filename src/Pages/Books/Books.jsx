@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row, Col, Card, Form, Button } from "react-bootstrap";
 import axios from "axios";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css"; // Import skeleton styles
 
 const Books = () => {
   const [booksByGenre, setBooksByGenre] = useState({});
@@ -8,8 +10,8 @@ const Books = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const API_KEY = process.env.REACT_APP_GOOGLE_BOOKS_API; //API KEY 
-  const genres = ["fiction", "nonfiction", "fantasy", "mystery", "science"]; // GENRE 
+  const API_KEY = process.env.REACT_APP_GOOGLE_BOOKS_API; // API KEY
+  const genres = ["fiction", "nonfiction", "fantasy", "mystery", "science"]; // GENRE
 
   const fetchBooksByGenre = async () => {
     setLoading(true);
@@ -72,13 +74,28 @@ const Books = () => {
     fetchBooksByGenre(); // Fetch books for all genres on component mount
   }, []);
 
+  const renderSkeletonCards = () => {
+    return Array(12)
+      .fill()
+      .map((_, index) => (
+        <Col sm={3} key={index} className="mb-4">
+          <Card>
+            <Skeleton height={200} />
+            <Card.Body>
+              <Skeleton height={20} width="80%" />
+              <Skeleton height={15} width="60%" className="mt-2" />
+              <Skeleton height={15} width="40%" className="mt-2" />
+            </Card.Body>
+          </Card>
+        </Col>
+      ));
+  };
+
   return (
     <Container>
       <Row className="my-4">
         <Col>
-          <h1 className="d-flex justify-content-center">
-          Listopia
-          </h1>
+          <h1 className="d-flex justify-content-center">Listopia</h1>
         </Col>
       </Row>
       <Row className="justify-content-center">
@@ -99,18 +116,12 @@ const Books = () => {
         </Col>
       </Row>
       {loading ? (
-        <Row className="mt-4">
-          <Col>
-            <p>Loading...</p>
-          </Col>
-        </Row>
+        <Row className="mt-4">{renderSkeletonCards()}</Row>
       ) : searchResults.length > 0 ? (
         <Row className="mt-4">
           <Row>
             <Col>
-              <h2 className="text-center">
-                Search Results
-              </h2>
+              <h2 className="text-center">Search Results</h2>
             </Col>
           </Row>
           {searchResults.map((book) => (
