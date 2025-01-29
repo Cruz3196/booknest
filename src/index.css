@@ -40,3 +40,8 @@ code {
   flex-direction: column;
   justify-content: space-between;
 }
+/*  Navbar On Responsiveness  */
+.navbar-collapse {
+  background-color: #F4F1EA;
+  padding: 10px;
+}

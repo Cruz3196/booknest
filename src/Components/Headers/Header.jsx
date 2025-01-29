@@ -5,7 +5,8 @@ function Header() {
     <nav className="navbar navbar-expand-lg " 
       style={{
         backgroundColor: "#F4F1EA",
-        boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)"
+        boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
+        height: "80px"
     }}>
       <div className="container">
         <a className="navbar-brand" href="/">

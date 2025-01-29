@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row, Col, Card, Form, Button } from "react-bootstrap";
 import axios from "axios";
+import {Link} from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css"; // Import skeleton styles
 
@@ -127,7 +128,9 @@ const Books = () => {
           {searchResults.map((book) => (
             <Col md={3} key={book.id} className="mb-4">
               <Card>
-                <Card.Img variant="top" src={book.image} alt={book.title} />
+                <Link to={`/book/${book.id}`}>
+                  <Card.Img variant="top" src={book.image} alt={book.title} />
+                </Link>
                 <Card.Body>
                   <Card.Title>{book.title}</Card.Title>
                   <Card.Text>
