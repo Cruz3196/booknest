@@ -127,19 +127,21 @@ const Books = () => {
           </Row>
           {searchResults.map((book) => (
             <Col md={3} key={book.id} className="mb-4">
-              <Card>
-                <Link to={`/book/${book.id}`}>
-                  <Card.Img variant="top" src={book.image} alt={book.title} />
-                </Link>
-                <Card.Body>
-                  <Card.Title>{book.title}</Card.Title>
-                  <Card.Text>
-                    <strong>Author:</strong> {book.author}
-                    <br />
-                    <strong>Rating:</strong> {book.rating} / 5
-                  </Card.Text>
-                </Card.Body>
-              </Card>
+            <Card>
+              <Link to={`/book/${book.id}`}>
+                <Card.Img variant="top" src={book.image} alt={book.title} />
+              </Link>
+              <Card.Body>
+                <Card.Title>
+                  <Link to={`/book/${book.id}`}>{book.title}</Link>
+                </Card.Title>
+                <Card.Text>
+                  <strong>Author:</strong> {book.author}
+                  <br />
+                  <strong>Rating:</strong> {book.rating} / 5
+                </Card.Text>
+              </Card.Body>
+            </Card>
             </Col>
           ))}
         </Row>
@@ -155,17 +157,21 @@ const Books = () => {
               {books.length > 0 ? (
                 books.map((book) => (
                   <Col md={3} key={book.id} className="mb-4">
-                    <Card>
+                  <Card>
+                    <Link to={`/book/${book.id}`}>
                       <Card.Img variant="top" src={book.image} alt={book.title} />
-                      <Card.Body>
-                        <Card.Title>{book.title}</Card.Title>
-                        <Card.Text>
-                          <strong>Author:</strong> {book.author}
-                          <br />
-                          <strong>Rating:</strong> {book.rating} / 5
-                        </Card.Text>
-                      </Card.Body>
-                    </Card>
+                    </Link>
+                    <Card.Body>
+                      <Card.Title>
+                        <Link to={`/book/${book.id}`}>{book.title}</Link>
+                      </Card.Title>
+                      <Card.Text>
+                        <strong>Author:</strong> {book.author}
+                        <br />
+                        <strong>Rating:</strong> {book.rating} / 5
+                      </Card.Text>
+                    </Card.Body>
+                  </Card>
                   </Col>
                 ))
               ) : (
