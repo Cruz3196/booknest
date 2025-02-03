@@ -3,7 +3,6 @@ import { Container, Row, Col, Card, Form, Button } from "react-bootstrap";
 import axios from "axios";
 import {Link} from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
-import "react-loading-skeleton/dist/skeleton.css"; // Import skeleton styles
 
 const Books = () => {
   const [booksByGenre, setBooksByGenre] = useState({});
